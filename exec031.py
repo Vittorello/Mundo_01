@@ -1,9 +1,12 @@
-import calendar
+from calendar import isleap
+from datetime import date
 
 while True:
     try:
-        ano = int(input("Digite o ano que voê quer saber se é bisssexto ou não: "))
-        if calendar.isleap(ano):
+        ano = int(input("Digite o ano que você quer analisar ou digite 0 para analisar o ano atual: "))
+        if ano == 0:
+            ano = date.today().year
+        if isleap(ano):
             print(f"O ano {ano} é bissexto.")
         else:
             print(f"Esse ano {ano} não é bissexto")
